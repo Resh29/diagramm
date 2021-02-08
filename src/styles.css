@@ -1,0 +1,26 @@
+body {
+  font-family: sans-serif;
+}
+
+.unit {
+  fill: none;
+  stroke-width: 5;
+  animation-name: render;
+  animation-duration: 1.5s;
+  transition: all 0.5s;
+}
+.unit:hover {
+  opacity: 0.7;
+}
+.diagramm-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  max-width: 800px;
+}
+
+@keyframes render {
+  0% {
+    stroke-dasharray: 0 100;
+  }
+}
