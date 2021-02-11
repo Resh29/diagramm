@@ -1,4 +1,4 @@
-import "./styles.css";
+// import "./styles.css";
 
 const stats = [
   { percents: 50, name: "income", color: "#ffc7ec" },
@@ -84,7 +84,7 @@ function setInputs(arr) {
     input.value = arr[i].percents;
     input.classList.add("range-input");
     input.min = 1;
-    input.max = 555;
+    input.max = 100;
 
     input.addEventListener("input", (e) => {
       d.setValue(e.target.name, e.target.value);
