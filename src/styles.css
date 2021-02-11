@@ -19,6 +19,10 @@ body {
   max-width: 800px;
 }
 
+.range-input {
+  margin-left: 1rem;
+}
+
 @keyframes render {
   0% {
     stroke-dasharray: 0 100;
