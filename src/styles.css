@@ -19,6 +19,23 @@ body {
   max-width: 800px;
 }
 
+.range-input {
+  margin-left: 1rem;
+}
+.inputs-container {
+  display: flex;
+  justify-content: space-around;
+  padding: 1rem;
+  background-color: azure;
+}
+.inputs-container div {
+  display: flex;
+  flex-direction: column;
+}
+.inputs-container div label {
+  text-align: center;
+}
+
 @keyframes render {
   0% {
     stroke-dasharray: 0 100;
