@@ -75,61 +75,27 @@ d.init();
 function setInputs(arr) {
   for (let i = 0; i < arr.length; i++) {
     let input = document.createElement("input");
+    let label = document.createElement("label");
+    label.setAttribute("for", arr[i].name);
+    label.innerText = arr[i].name;
+    label.style.color = arr[i].color;
     input.setAttribute("name", arr[i].name);
     input.type = "range";
     input.value = arr[i].percents;
     input.classList.add("range-input");
     input.min = 1;
-    input.max = 99999;
+    input.max = 555;
+
     input.addEventListener("input", (e) => {
       d.setValue(e.target.name, e.target.value);
     });
-    document.querySelector("#app").append(input);
+    let div = document.createElement("div");
+
+    document.querySelector(".inputs-container").append(div);
+
+    div.append(label);
+    div.append(input);
   }
 }
 
 setInputs(stats);
-
-// const diagramm = {
-//   init(container = ".diagramm-container", stats) {
-//     const sum = stats.reduce((acc, cur) => {
-//       return acc + cur.percents;
-//     }, 0);
-//     const $container = document.querySelector(container);
-//     let offset = 0;
-//     stats.forEach((element) => {
-//       let percent = (element.percents * 100) / sum;
-//       let unit = `<circle
-//     style="stroke-dasharray: ${percent} 100;
-//     stroke-dashoffset: ${-offset || 0};
-//     stroke:${element.color};
-//     "
-
-//     r="15.9" cx="50%" cy="50%"
-//     class="unit"
-
-//     id='${element.name}'
-//   >
-//   </circle>`;
-//       $container
-//         .querySelector(".diagramm")
-//         .insertAdjacentHTML("beforeend", unit);
-//       offset += percent;
-//     });
-//     this.units = $container.querySelectorAll(".unit");
-//   },
-//   changeHandler(state) {
-//     let offset = 0;
-
-//     const sum = state.reduce((acc, cur) => {
-//       return acc + cur.percents;
-//     }, 0);
-//     state.forEach((el) => {
-//       let percent = (el.percents * 100) / sum;
-//       let curEl = document.getElementById(el.name);
-//       curEl.style.strokeDasharray = percent && " " + 100;
-//       curEl.style.strokeDashoffset = offset;
-//       offset += percent;
-//     });
-//   }
-// };
